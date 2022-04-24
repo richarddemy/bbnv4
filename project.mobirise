@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "BBNV3",
-    "currentPage": "index.html",
+    "currentPage": "earthrise.html",
     "theme": {
       "name": "spiritm4",
       "title": "SpiritM4",
@@ -47,7 +47,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 12,
+    "uniqCompNum": 21,
     "versionPublish": "5.6.5",
     "screenshot": "screenshot.png",
     "favicon": "@PROJECT_PATH@/assets/images/bbnv-splash-128x128_1.png",
@@ -595,6 +595,86 @@
                 "opacity": "@overlayOpacity"
               }
             },
+            "@newPrimary": "replace(~\"@{primaryColor}\", '#', '%23')",
+            "@newSuccess": "replace(~\"@{successColor}\", '#', '%23')",
+            "@newInfo": "replace(~\"@{infoColor}\", '#', '%23')",
+            "@newDanger": "replace(~\"@{dangerColor}\", '#', '%23')",
+            ".svg-wrapper": {
+              "display": "block",
+              "background-image": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1964' height='920'%3E%3Cpolygon points='0,0 985,0 920,23 0,23' class='svg1' style='fill:@{newPrimary}'%3E%3C/polygon%3E%3Cpolygon points='985,0 1964,0 1941,23 920,23' class='svg2' style='fill:@{newInfo}'%3E%3C/polygon%3E%3Cpolygon points='1964,0 1964,469.65 1941,525.5 1941,23' class='svg3' style='fill:@{newSuccess}'%3E%3C/polygon%3E%3Cpolygon points='1964,469.65 1964,920 1941,920 1941,525.5' class='svg4' style='fill:@{newDanger}'%3E%3C/polygon%3E%3C/svg%3E\")",
+              "background-size": "auto 100%",
+              "background-repeat": "no-repeat",
+              "background-position-x": "right",
+              "width": "100%",
+              "max-height": "454px",
+              "height": "100%",
+              "position": "absolute",
+              "top": "-25px",
+              "right": "30px",
+              "bottom": "25px",
+              "@media (max-width: 992px)": {
+                "top": "-10px",
+                "right": "10px"
+              }
+            },
+            ".text-wrapper": {
+              "padding": "70px 50px",
+              "margin": "0 auto",
+              "position": "relative",
+              "display": "flex",
+              "background-color": "@CardColor",
+              "flex-direction": "column"
+            },
+            ".mbr-section-title, .mbr-section-text, .section-subtitle, .mbr-section-btn": {
+              "z-index": "0"
+            },
+            ".section-subtitle": {
+              "margin-bottom": "20.4px"
+            },
+            ".section-subtitle, .mbr-section-btn": {
+              "color": "#4c4c4c"
+            },
+            ".mbr-section-text, .mbr-section-btn": {
+              "color": "#4c4c4c"
+            },
+            ".mbr-section-title": {
+              "color": "#231f59",
+              "text-align": "center"
+            }
+          },
+          "_name": "content3",
+          "_sourceTheme": "spiritm4",
+          "_customHTML": "<section class=\"content3\" group=\"Content\" data-bg-video=\"{{bg.type == 'video'&&bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n         <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" value=\"5\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" value=\"5\">\n        <input type=\"range\" name=\"textWidth\" title=\"Width\" min=\"5\" max=\"12\" value=\"9\" step=\"1\">\n        <header>Show / Hide</header>\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Button\" name=\"showButton\" checked> \n        <header>Background</header>\n        <input type=\"color\" title=\"Card Color\" name=\"CardColor\" value=\"#ebc6b8\">\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/022.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#393478\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"2 Background Color\" name=\"twoBgColor\" condition=\"bg.type == 'color'\" checked> \n        <input type=\"range\" inline title=\"Width 2 Bg\" name=\"width2Bg\" min=\"1\" max=\"6\" step=\"1\" value=\"2\" condition=\"twoBgColor\">\n        <input type=\"color\" title=\"2 Color\" name=\"twoColor\" value=\"#e9ddd8\" condition=\"twoBgColor && bg.type == 'color'\">  \n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#7394ab\" condition=\"overlay&&bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay&&bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n<div class=\"mbr-overlay\" mbr-if=\"(overlay && bg.type !== 'color') || (twoBgColor && bg.type == 'color')\" mbr-class=\"{'col-md-4': width2Bg == 1 && twoBgColor && bg.type == 'color',\n                     'col-md-5': width2Bg == 2 && twoBgColor && bg.type == 'color',\n                     'col-md-6': width2Bg == 3 && twoBgColor && bg.type == 'color',\n                     'col-md-7': width2Bg == 4 && twoBgColor && bg.type == 'color',\n                     'col-md-8': width2Bg == 5 && twoBgColor && bg.type == 'color',\n                     'col-md-9': width2Bg == 6 && twoBgColor && bg.type == 'color'}\">\n    </div>\n<div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">  \n         <div class=\"row justify-content-center\">\n            <div class=\"col-md-{{textWidth}} text-wrapper\"> \n                <div class=\"svg-wrapper\"></div>\n                  <h2 class=\"mbr-section-title mbr-fonts-style align-center mbr-regular mb-4\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Earthrise<br><br></h2>\n                 <p class=\"mbr-section-text mbr-fonts-style align-center mbr-regular mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-section-text, .mbr-section-btn\">FESTIVE SETTING: LEAD ON! -RONALD HOLZ<br>IL Guarney-by. <a href=\"https://en.wikipedia.org/wiki/Ant%C3%B4nio_Carlos_Gomes\" class=\"text-primary\">Antônio Carlos Gomes</a> arr. <a href=\"https://johnsrutowskimusic.webs.com/contact.htm\" class=\"text-primary\">JOHN SRUTOWSKI</a><br>GAELFORCE – by. <a href=\"https://en.wikipedia.org/wiki/Peter_Graham_(composer)\" class=\"text-primary\">PETER GRAHAM</a><br>EARTHRISE – by. <a href=\"https://en.wikipedia.org/wiki/Nigel_Clarke_(composer)\" class=\"text-primary\">NIGEL CLARKE</a><br><br>INTERMISSION<br><br>Shche ne vmerla Ukrainas’ eng‘Ukraine Has Not Yet Perished’<br>JOURNEY INTO FREEDOM - by. <a href=\"https://en.wikipedia.org/wiki/Eric_Ball_(composer)\" class=\"text-primary\">ERIC BALL</a> <br>PRAYER OF UKRAINE -&nbsp;Молитва за Україну by&nbsp;by <a href=\"https://en.wikipedia.org/wiki/Mykola_Lysenko\" class=\"text-primary\">Mykola Lysenko</a>&nbsp;arr.&nbsp;<br>I’LL WALK WITH GOD –&nbsp;&nbsp;<a href=\"https://en.wikipedia.org/wiki/Paul_Francis_Webster\" class=\"text-primary\">Paul Francis Webster </a>(1907 – 1984) arr.&nbsp;<a href=\"https://en.wikipedia.org/wiki/Goff_Richards\" class=\"text-primary\">Goff Richards</a><br></p>\n                 <h5 class=\"section-subtitle mbr-fonts-style align-center mbr-semibold\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".section-subtitle, .mbr-section-btn\"> \n                    April 24th 4:00pm Church of the Good Shepherd Burke, VA<br><br></h5>\n                <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-center\" data-toolbar=\"-mbrBtnMove\" mbr-if=\"showButton\" data-app-selector=\".mbr-section-btn\"><a class=\"btn btn-lg btn-secondary\" href=\"index.html\" data-app-placeholder=\"Type Text\">MORE INFORMATION</a></div>\n                </div>\n            </div>\n        </div>\n</section>",
+          "_cid": "t3Shdznvxo",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "content3-c"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value",
+              ".mbr-overlay when (@twoBgColor)": {
+                "padding": "0",
+                "background": "@twoColor",
+                "opacity": "1",
+                "transform": "scale(3) skewX(25deg)",
+                "transform-origin": "left bottom",
+                "left": "-100%"
+              }
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)",
+              ".mbr-overlay": {
+                "background": "@overlayColor",
+                "opacity": "@overlayOpacity"
+              }
+            },
             ".mbr-section-subtitle": {
               "letter-spacing": "3.27px !important",
               "color": "#6a3649",
@@ -899,57 +979,6 @@
           "_params": {}
         },
         {
-          "alias": false,
-          "_styles": {
-            "padding-top": "(@paddingTop * 1rem)",
-            "padding-bottom": "(@paddingBottom * 1rem)",
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value",
-              ".mbr-overlay when (@twoBgColor)": {
-                "padding": "0",
-                "background": "@twoColor",
-                "opacity": "1",
-                "transform": "scale(3) skewX(25deg)",
-                "transform-origin": "left bottom",
-                "left": "-100%"
-              }
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)",
-              ".mbr-overlay": {
-                "background": "@overlayColor",
-                "opacity": "@overlayOpacity"
-              }
-            },
-            ".mbr-section-subtitle": {
-              "letter-spacing": "3.27px !important",
-              "color": "#6a3649",
-              "text-align": "center"
-            },
-            ".title-text": {
-              "color": "#231f59",
-              "text-align": "center"
-            },
-            "H5": {
-              "color": "#4c4a4b",
-              "text-align": "center"
-            },
-            ".section-text, .mbr-section-btn": {
-              "text-align": "center",
-              "color": "#4c4a4b"
-            }
-          },
-          "_name": "content1",
-          "_sourceTheme": "spiritm4",
-          "_customHTML": "<section class=\"content1\" group=\"Content\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" plugins=\"mobirise-icons2\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"7\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"7\">\n        <input type=\"range\" name=\"textWidth\" title=\"Width\" min=\"5\" max=\"12\" value=\"6\" step=\"1\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n         <input type=\"checkbox\" title=\"Subtitle\" name=\"Subtitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Button\" name=\"showButton\">\n         <header>Background</header>\n         <fieldset type=\"background\" name=\"bg\" parallax>\n                <input type=\"image\" title=\"Background Image\" value=\"../_images/022.jpg\" parallax>\n                <input type=\"color\" title=\"Background Color\" value=\"#f2f1eb\" selected>\n         </fieldset>\n            <input type=\"checkbox\" title=\"2 Background Color\" name=\"twoBgColor\" condition=\"bg.type == 'color'\" checked> \n            <input type=\"range\" inline title=\"Width 2 Bg\" name=\"width2Bg\" min=\"1\" max=\"6\" step=\"1\" value=\"3\" condition=\"twoBgColor && bg.type == 'color'\">   \n            <input type=\"color\" title=\"2 Color\" name=\"twoColor\" value=\"#e9ddd8\" condition=\"twoBgColor && bg.type == 'color'\">  \n            <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n            <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#f2f1eb\" condition=\"overlay && bg.type !== 'color'\">\n            <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n <div class=\"mbr-overlay\" mbr-if=\"(overlay && bg.type !== 'color') || (twoBgColor && bg.type == 'color')\" mbr-class=\"{'col-md-4': width2Bg == 1 && twoBgColor && bg.type == 'color',\n                     'col-md-5': width2Bg == 2 && twoBgColor && bg.type == 'color',\n                     'col-md-6': width2Bg == 3 && twoBgColor && bg.type == 'color',\n                     'col-md-7': width2Bg == 4 && twoBgColor && bg.type == 'color',\n                     'col-md-8': width2Bg == 5 && twoBgColor && bg.type == 'color',\n                     'col-md-9': width2Bg == 6 && twoBgColor && bg.type == 'color'}\">\n    </div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-md-{{textWidth}}\">\n                     <h5 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-4 mt-4\" mbr-theme-style=\"display-4\" mbr-if=\"Subtitle\" data-app-selector=\".mbr-section-subtitle\"></h5>\n                     <h4 class=\"mbr-fonts-style title-text align-center mbr-regular mb-4\" mbr-theme-style=\"display-5\" data-app-selector=\".title-text\" mbr-if=\"showTitle\"></h4>\n                     <h5 class=\"mbr-fonts-style align-center section-text mb-4 mbr-regular\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".section-text, .mbr-section-btn\"></h5>\n                     <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-center\" data-toolbar=\"-mbrBtnMove\" mbr-if=\"showButton\"><a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">CREATE YOUR OWN WEBSITE</a></div>\n                    </div>\n           </div>\n    </div>\n</section>",
-          "_cid": "sJO7UNsJFW",
-          "_anchor": "content1-b",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
           "_name": "team",
           "_sourceTheme": "firmm4",
           "_customHTML": "<section class=\"team firmm4_team\" group=\"Team\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"7\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"7\">\n        <select title=\"Columns\" name=\"cardsWidth\">\n            <option value=\"12\">1</option>\n            <option value=\"6\">2</option>\n            <option value=\"4\">3</option>\n            <option value=\"3\" selected>4</option>\n        </select>\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showMainTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showMainSubtitle\" checked>\n        <header>Card</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showCardTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showCardText\" checked>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"cardOverlay\" checked>\n        <input type=\"color\" title=\"Color 1\" value=\"#110d3e\" name=\"cardOverlay1\" condition=\"cardOverlay\">\n        <input type=\"color\" title=\"Color 2\" value=\"#393478\" name=\"cardOverlay2\" condition=\"cardOverlay\">\n        <input type=\"checkbox\" name=\"autoSize\" title=\"Auto Size\" checked>\n        <input type=\"range\" name=\"imageHeight\" title=\"Height\" min=\"1\" max=\"5\" step=\"1\" value=\"5\" condition=\"autoSize\">\n         <input type=\"range\" inline title=\"Icon Count\" name=\"iconCount\" min=\"0\" max=\"4\" step=\"1\" value=\"2\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/firmm4/components/_images/background/background.jpg\" parallax>\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-12 title_block\" mbr-if=\"showMainTitle || showMainSubtitle\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style align-center\" mbr-theme-style=\"display-4\" mbr-if=\"showMainSubtitle\" data-app-selector=\".mbr-section-subtitle\">Board of Directors</h4>\n                <h3 class=\"mbr-section-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-2\" mbr-if=\"showMainTitle\" data-app-selector=\".mbr-section-title\"></h3>\n            </div>\n            \n            <div class=\"item features-image col-12 col-lg-{{cardsWidth}} col-md-6 col-sm-6 active\">\n                <div class=\"item-wrapper text-center\">\n                        <div class=\"item-img\">\n                            <img src=\"@PROJECT_PATH@/assets/images/31071099-10215527895092536-7348549260604795797-n-175x262.jpg\" alt data-slide-to=\"0\" data-bs-slide-to=\"0\">\n                            <div class=\"social_block\" mbr-list mbr-list-grow=\"iconCount\" mbr-if=\"iconCount > 0\">\n                                <a href=\"#\" target=\"_blank\" class=\"iconfont-wrapper\">\n                                    <span mbr-icon class=\"mbr-iconfont socicon-facebook socicon\"></span>\n                                </a>\n                                <a href=\"mailto:wdavep@aol.com\" class=\"iconfont-wrapper\">\n                                    <span mbr-icon class=\"mbr-iconfont mobi-mbri-letter mobi-mbri\"></span>\n                                </a>\n                            </div>\n                        </div>\n                        <h5 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showCardTitle\" data-app-selector=\".card-title\"><b>Personnel&nbsp;Manager</b></h5>\n                        <p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-4\" mbr-if=\"showCardText\" data-app-selector=\".card-text, .btn_link\">Dr. David Porter&nbsp;</p>\n                </div>\n            </div><div class=\"item features-image col-12 col-lg-{{cardsWidth}} col-md-6 col-sm-6\">\n                <div class=\"item-wrapper text-center\">\n                        <div class=\"item-img\">\n                            <img src=\"@PROJECT_PATH@/assets/images/83926325-238330237197115-7114553303656038400-n-510x765.jpeg\" alt data-slide-to=\"1\" data-bs-slide-to=\"1\">\n                            <div class=\"social_block\" mbr-list mbr-list-grow=\"iconCount\" mbr-if=\"iconCount > 0\">\n                            <a href=\"https://www.facebook.com/caleb.r.degroote\" target=\"_blank\" class=\"iconfont-wrapper\">\n                                    <span mbr-icon class=\"mbr-iconfont socicon-facebook socicon\"></span>\n                                </a>\n                                <a href=\"mailto:caleb.degroote@gmail.com\" class=\"iconfont-wrapper\">\n                                    <span mbr-icon class=\"mbr-iconfont mobi-mbri-letter mobi-mbri\"></span>\n                                </a></div>\n                        </div>\n                        <h5 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showCardTitle\" data-app-selector=\".card-title\"></h5>\n                        <p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-4\" mbr-if=\"showCardText\" data-app-selector=\".card-text, .btn_link\">Caleb DeGroote</p>\n                </div>\n            </div><div class=\"item features-image col-12 col-lg-{{cardsWidth}} col-md-6 col-sm-6\">\n                <div class=\"item-wrapper text-center\">\n                        <div class=\"item-img\">\n                            <img src=\"@PROJECT_PATH@/assets/images/51390270-10156967988268607-8683707154139447296-o-1-550x825.jpeg\" alt data-slide-to=\"1\" data-bs-slide-to=\"1\">\n                            <div class=\"social_block\" mbr-list mbr-list-grow=\"iconCount\" mbr-if=\"iconCount > 0\">\n                            <a href=\"https://www.facebook.com/barryb\" target=\"_blank\" class=\"iconfont-wrapper\">\n                                    <span mbr-icon class=\"mbr-iconfont socicon-facebook socicon\"></span>\n                                </a>\n                                <a href=\"mailto:barry@bocaner.net\" class=\"iconfont-wrapper\">\n                                    <span mbr-icon class=\"mbr-iconfont mobi-mbri-letter mobi-mbri\"></span>\n                                </a></div>\n                        </div>\n                        <h5 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showCardTitle\" data-app-selector=\".card-title\"></h5>\n                        <p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-4\" mbr-if=\"showCardText\" data-app-selector=\".card-text, .btn_link\">Barry Bocaner</p>\n                </div>\n            </div><div class=\"item features-image col-12 col-lg-{{cardsWidth}} col-md-6 col-sm-6\">\n                <div class=\"item-wrapper text-center\">\n                        <div class=\"item-img\">\n                            <img src=\"@PROJECT_PATH@/assets/images/p1010831-550x825.jpeg\" alt data-slide-to=\"2\" data-bs-slide-to=\"2\">\n                            <div class=\"social_block\" mbr-list mbr-list-grow=\"iconCount\" mbr-if=\"iconCount > 0\">\n                            <a href=\"https://www.facebook.com/RichardDemyMusic\" target=\"_blank\" class=\"iconfont-wrapper\">\n                                    <span mbr-icon class=\"mbr-iconfont socicon-facebook socicon\"></span>\n                                </a>\n                                <a href=\"mailto:info@demymusic.com\" class=\"iconfont-wrapper\">\n                                    <span mbr-icon class=\"mbr-iconfont mobi-mbri-letter mobi-mbri\"></span>\n                                </a></div>\n                        </div>\n                        <h5 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showCardTitle\" data-app-selector=\".card-title\"></h5>\n                        <p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-4\" mbr-if=\"showCardText\" data-app-selector=\".card-text, .btn_link\">Dr. Richard Demy</p>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
@@ -1216,6 +1245,674 @@
           "_global": true,
           "_once": "footers",
           "_params": {}
+        }
+      ]
+    },
+    "earthrise.html": {
+      "settings": {
+        "title": "April 24th 4:00pm Church of the Good Shepperd Burke, VA ",
+        "order": 1,
+        "meta_descr": "April 24th 4:00pm\nChurch of the Good Shepperd Burke, VA\nProgramL",
+        "socialSharingUrl": ""
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            ".nav-item:focus, .nav-link:focus": {
+              "outline": "none"
+            },
+            "@media (min-width: 992px)": {
+              ".nav-item": {
+                "position": "relative"
+              }
+            },
+            ".navbar": {
+              "min-height": "77px",
+              "-webkit-justify-content": "center",
+              "justify-content": "center",
+              "-webkit-flex-direction": "column",
+              "flex-direction": "column",
+              "display": "-webkit-flex",
+              "-webkit-align-items": "center",
+              "background": "none",
+              ".mbr-overlay": {
+                "z-index": "-1",
+                "transition": "all .3s",
+                "background": "@menuBgColor",
+                "& when (@gradientBg)": {
+                  "background": "linear-gradient(@menuBgColor2, @menuBgColor)"
+                },
+                "& when (@transparent)": {
+                  "background": "none"
+                }
+              },
+              "&.opened": {
+                ".mbr-overlay": {
+                  "transition": "all .3s",
+                  "background": "@menuBgColor !important",
+                  "& when (@gradientBg)": {
+                    "background": "linear-gradient(@menuBgColor2, @menuBgColor) !important"
+                  }
+                }
+              },
+              ".dropdown-item": {
+                "padding": ".25rem 1.5rem"
+              },
+              ".navbar-collapse": {
+                "width": "100%",
+                "-webkit-flex-basis": "auto",
+                "flex-basis": "auto",
+                "-webkit-justify-content": "space-around",
+                "justify-content": "space-around",
+                "z-index": "1",
+                "padding": ".5rem 0",
+                "@media (max-width: 991px)": {
+                  "-webkit-justify-content": "flex-start",
+                  "justify-content": "flex-start"
+                },
+                "& when not (@showItems)": {
+                  "display": "none !important"
+                }
+              },
+              "&.collapsed": {
+                "&.opened": {
+                  ".dropdown-menu": {
+                    "top": "0"
+                  },
+                  ".navbar-collapse": {
+                    "-webkit-justify-content": "flex-start",
+                    "justify-content": "flex-start"
+                  }
+                },
+                ".navbar-collapse.show,.navbar-collapse.collapsing": {
+                  "transition": "all .3s linear",
+                  "display": "flex",
+                  "-webkit-flex-direction": "column",
+                  "flex-direction": "column",
+                  ".brand-container": {
+                    "-webkit-order": "-1",
+                    "order": "-1"
+                  }
+                },
+                ".dropdown-menu": {
+                  "background": "transparent !important",
+                  ".dropdown-submenu": {
+                    "left": "0 !important"
+                  },
+                  ".dropdown-item:after": {
+                    "right": "auto"
+                  },
+                  ".dropdown-toggle[data-toggle=\"dropdown-submenu\"]:after": {
+                    "margin-left": "1rem",
+                    "border-top": "0.35em solid",
+                    "border-right": "0.35em solid transparent",
+                    "border-left": "0.35em solid transparent",
+                    "border-bottom": "0",
+                    "top": "55%"
+                  }
+                },
+                "ul.navbar-nav": {
+                  "li": {
+                    "margin-right": "14px"
+                  }
+                },
+                ".navbar-buttons": {
+                  "margin": "0",
+                  "display": "flex",
+                  "-webkit-justify-content": "center",
+                  "justify-content": "center",
+                  "-webkit-flex-direction": "column",
+                  "flex-direction": "column"
+                },
+                ".dropdown-menu .dropdown-item": {
+                  "text-align": "center"
+                },
+                ".right-menu,.left-menu": {
+                  "-webkit-flex-basis": "auto",
+                  "flex-basis": "auto"
+                }
+              },
+              "@media (max-width: 991px)": {
+                ".navbar-collapse.show,.navbar-collapse.collapsing": {
+                  "transition": "all .3s linear",
+                  "display": "flex",
+                  "-webkit-flex-direction": "column",
+                  "flex-direction": "column",
+                  "justify-content": "center",
+                  "align-items": "center",
+                  "overflow-x": "hidden",
+                  ".brand-container": {
+                    "-webkit-order": "-1",
+                    "order": "-1"
+                  }
+                },
+                "&.opened": {
+                  ".dropdown-menu": {
+                    "top": "0"
+                  }
+                },
+                ".dropdown-menu": {
+                  "background": "transparent !important",
+                  ".dropdown-submenu": {
+                    "left": "0 !important"
+                  },
+                  ".dropdown-item:after": {
+                    "right": "auto"
+                  },
+                  ".dropdown-toggle[data-toggle=\"dropdown-submenu\"]:after": {
+                    "margin-left": ".25rem",
+                    "border-top": "0.35em solid",
+                    "border-right": "0.35em solid transparent",
+                    "border-left": "0.35em solid transparent",
+                    "border-bottom": "0",
+                    "top": "55%"
+                  }
+                },
+                ".navbar-logo": {
+                  "img": {
+                    "height": "3.8rem !important"
+                  }
+                },
+                "ul.navbar-nav": {
+                  "li": {
+                    "margin": "auto !important"
+                  }
+                },
+                ".navbar-buttons": {
+                  "margin": "0",
+                  "display": "flex",
+                  "-webkit-justify-content": "center",
+                  "justify-content": "center",
+                  "-webkit-flex-wrap": "wrap",
+                  "flex-wrap": "wrap",
+                  "-webkit-flex-direction": "column",
+                  "flex-direction": "column"
+                },
+                ".dropdown-menu .dropdown-item": {
+                  "padding": ".25rem 1.5rem",
+                  "text-align": "center"
+                },
+                ".right-menu,.left-menu": {
+                  "-webkit-flex-basis": "auto",
+                  "flex-basis": "auto"
+                }
+              },
+              "&.navbar-short": {
+                "min-height": "60px",
+                ".mbr-overlay": {
+                  "background": "@menuBgColor !important",
+                  "& when (@gradientBg)": {
+                    "background": "linear-gradient(@menuBgColor2, @menuBgColor) !important"
+                  }
+                },
+                ".navbar-logo": {
+                  "img": {
+                    "height": "3rem !important"
+                  }
+                },
+                ".navbar-brand": {
+                  "padding": "0"
+                }
+              }
+            },
+            "@media (min-width: 768px)": {
+              ".navbar": {
+                "padding-left": "65px",
+                "padding-right": "65px"
+              }
+            },
+            ".navbar-brand": {
+              "-webkit-align-items": "center",
+              "align-items": "center",
+              "margin-right": "0",
+              "padding": "0",
+              "transition": "all .3s",
+              "word-break": "break-word",
+              "z-index": "1",
+              "flex-wrap": "wrap",
+              "justify-content": "center",
+              ".navbar-caption": {
+                "line-height": "inherit !important"
+              },
+              ".navbar-logo a": {
+                "outline": "none"
+              }
+            },
+            ".dropdown-item.active,.dropdown-item:active": {
+              "background-color": "transparent"
+            },
+            ".navbar-expand-lg .navbar-nav .nav-link": {
+              "padding": "0"
+            },
+            ".nav-dropdown .link.dropdown-toggle": {
+              "&[aria-expanded=\"true\"]": {
+                "margin-right": "0"
+              }
+            },
+            ".navbar.navbar-expand-lg .dropdown": {
+              ".dropdown-menu": {
+                "background": "@menuBgColor",
+                ".dropdown-submenu": {
+                  "margin": "0",
+                  "left": "100%"
+                }
+              }
+            },
+            ".navbar .dropdown.open > .dropdown-menu": {
+              "display": "block"
+            },
+            "ul.navbar-nav": {
+              "display": "-webkit-flex",
+              "-webkit-flex-wrap": "wrap",
+              "flex-wrap": "wrap",
+              "@media (max-width: 991px)": {
+                "-webkit-flex-direction": "column",
+                "flex-direction": "column"
+              }
+            },
+            ".navbar-buttons": {
+              "margin-left": "auto"
+            },
+            "button.navbar-toggler": {
+              "width": "31px",
+              "height": "20px",
+              "cursor": "pointer",
+              "transition": "all .2s",
+              "position": "relative",
+              "margin": "1rem",
+              "-webkit-align-self": "center",
+              "align-self": "center",
+              "outline": "none",
+              "&:hover": {
+                "outline": "none"
+              },
+              "&:active": {
+                "outline": "none"
+              },
+              ".hamburger span": {
+                "position": "absolute",
+                "right": "0",
+                "width": "30px",
+                "height": "2px",
+                "border-right": "5px",
+                "background-color": "@hamburgerColor",
+                "&:nth-child(1)": {
+                  "top": "0",
+                  "transition": "all .2s"
+                },
+                "&:nth-child(2)": {
+                  "top": "8px",
+                  "transition": "all .15s"
+                },
+                "&:nth-child(3)": {
+                  "top": "8px",
+                  "transition": "all .15s"
+                },
+                "&:nth-child(4)": {
+                  "top": "16px",
+                  "transition": "all .2s"
+                }
+              }
+            },
+            "nav.opened .hamburger span": {
+              "&:nth-child(1)": {
+                "top": "8px",
+                "width": "0",
+                "opacity": "0",
+                "right": "50%",
+                "transition": "all .2s"
+              },
+              "&:nth-child(2)": {
+                "-webkit-transform": "rotate(45deg)",
+                "transform": "rotate(45deg)",
+                "transition": "all .25s",
+                "width": "20px",
+                "right": "-2px"
+              },
+              "&:nth-child(3)": {
+                "-webkit-transform": "rotate(-45deg)",
+                "transform": "rotate(-45deg)",
+                "transition": "all .25s",
+                "width": "20px",
+                "left": "-2px"
+              },
+              "&:nth-child(4)": {
+                "top": "8px",
+                "width": "0",
+                "opacity": "0",
+                "right": "50%",
+                "transition": "all .2s"
+              }
+            },
+            ".navbar-dropdown": {
+              "& when (@sticky)": {
+                "position": "fixed"
+              }
+            },
+            "a.nav-link": {
+              "position": "relative",
+              "display": "flex",
+              "-webkit-align-items": "center",
+              "align-items": "center",
+              "-webkit-justify-content": "center",
+              "justify-content": "center",
+              "letter-spacing": "3.41px",
+              "&:before": {
+                "content": "\"\"",
+                "display": "block",
+                "width": "100%",
+                "height": "1px",
+                "background-color": "currentColor",
+                "position": "absolute",
+                "bottom": "0",
+                "left": "0",
+                "transform": "scale(0)",
+                "transition": ".3s ease"
+              },
+              "&:hover:before": {
+                "transform": "scale(1)"
+              }
+            },
+            ".mbr-iconfont": {
+              "font-size": "1.5rem",
+              "padding-right": ".5rem"
+            },
+            ".right-menu,.left-menu": {
+              "-webkit-flex-basis": "50%",
+              "flex-basis": "50%"
+            },
+            ".left-menu": {
+              ".navbar-nav": {
+                "-webkit-justify-content": "flex-start",
+                "justify-content": "flex-start",
+                "ul": {
+                  "-webkit-justify-content": "flex-start",
+                  "justify-content": "flex-start"
+                }
+              }
+            },
+            ".right-menu": {
+              ".navbar-nav": {
+                "-webkit-justify-content": "flex-end",
+                "justify-content": "flex-end",
+                "ul": {
+                  "-webkit-justify-content": "flex-end",
+                  "justify-content": "flex-end"
+                }
+              }
+            },
+            ".brand-container": {
+              "padding": "0 2rem",
+              "-webkit-flex-shrink": "0",
+              "flex-shrink": "0"
+            },
+            ".card-wrapper": {
+              "z-index": "3"
+            },
+            ".popup-btn": {
+              "&.card-wrapper": {
+                "z-index": "1 !important"
+              }
+            },
+            "& when (@collapsed)": {
+              ".navbar-collapse": {
+                "padding-top": "0"
+              }
+            },
+            "@media (max-width: 991px)": {
+              ".navbar-collapse": {
+                "padding-top": "0"
+              }
+            },
+            "@media screen and (~'-ms-high-contrast: active'), (~'-ms-high-contrast: none')": {},
+            ".nav-item:not(:last-child)": {
+              "margin-right": "14px !important"
+            },
+            ".navbar-brand img": {
+              "width": "auto !important"
+            }
+          },
+          "_name": "menu1",
+          "_sourceTheme": "spiritm4",
+          "_customHTML": "<section class=\"menu popup-btn-cards\" group=\"Menu\" plugins=\"DropDown, TouchSwipe\" global always-top position-absolute once=\"menu\" not-draggable>\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Show Logo\" name=\"showLogo\" checked>\n        <input type=\"range\" title=\"Logo Size\" inline name=\"logoSize\" min=\"3.8\" max=\"8\" step=\"0.1\" value=\"3.8\" condition=\"showLogo\">\n        <input type=\"checkbox\" title=\"Show Brand Name\" name=\"showBrand\" checked>\n        <input type=\"checkbox\" title=\"Show Menu Items\" name=\"showItems\" checked>\n        <input type=\"checkbox\" title=\"Sticky\" name=\"sticky\">\n        <input type=\"checkbox\" title=\"Collapsed\" name=\"collapsed\">\n        <input type=\"checkbox\" title=\"Transparent\" name=\"transparent\" checked>\n        <input type=\"color\" title=\"Hamburger Color\" name=\"hamburgerColor\" value=\"#282727\">\n        <input type=\"color\" title=\"BG Color\" name=\"menuBgColor\" value=\"#c17b71\">\n        <input type=\"checkbox\" title=\"Gradient BG\" name=\"gradientBg\" checked>\n        <input type=\"color\" title=\"BG Color 2\" name=\"menuBgColor2\" value=\"#f2f1eb\" condition=\"gradientBg\">\n        <input type=\"range\" inline title=\"BG Opacity\" name=\"bgOpacity\" min=\"0.5\" max=\"1\" step=\"0.1\" value=\"1\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    \n\n    <nav class=\"navbar navbar-dropdown\" mbr-class=\"{'navbar-fixed-top':sticky,\n                     'navbar-expand-lg':!collapsed,\n                     'collapsed':collapsed}\">\n        <div class=\"mbr-overlay\" mbr-style=\"{'opacity': bgOpacity}\"></div>\n\n      <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n            \n        <div class=\"left-menu\">\n          <ul mbr-menu class=\"navbar-nav nav-dropdown\" mbr-theme-style=\"display-4\" mbr-class=\"{'navbar-nav-top-padding': isPublish&&!showBrand&&!showLogo}\"><li class=\"nav-item text-primary\">\n                  <a class=\"nav-link link text-primary\" href=\"http://www.brassbandofnorthernvirginia.com/\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\">\n                      HOME</a>\n              </li></ul>\n        </div>\n\n        <div class=\"brand-container\">\n          <div class=\"navbar-brand\">\n              <span mbr-if=\"showLogo\" class=\"navbar-logo\">\n                  <a href=\"http://www.brassbandofnorthernvirginia.com/\">\n                      <img src=\"@PROJECT_PATH@/assets/images/index-meta-121x41.png\" alt mbr-style=\"{'height': logoSize + 'rem', 'width': auto}\">\n                  </a>\n              </span>\n              <span mbr-if=\"showBrand\" mbr-buttons mbr-theme-style=\"display-5\" class=\"navbar-caption-wrap\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd,-mbrBtnRemove\"><a class=\"navbar-caption\" data-app-selector=\".navbar-caption\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\"></a></span>\n          </div>\n        </div>\n\n        <div class=\"right-menu\">\n          <ul mbr-menu class=\"navbar-nav nav-dropdown\" mbr-theme-style=\"display-4\" mbr-class=\"{'navbar-nav-top-padding': isPublish&&!showBrand&&!showLogo}\"><li class=\"nav-item text-primary\">\n                <a class=\"nav-link link text-primary\" href=\"mailto:brassbandofnorthernvirginia@gmail.com\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\">\n                    CONTACT US</a>\n            </li></ul>\n        </div>\n      </div>\n\n          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" mbr-if=\"showItems\">\n            <div class=\"hamburger\">\n                <span></span>\n                <span></span>\n                <span></span>\n                <span></span>\n            </div>\n          </button>\n    </nav>\n\n</section>",
+          "_cid": "sIF4yxuV69",
+          "_protectedParams": [],
+          "_global": true,
+          "_once": "menu",
+          "_params": {},
+          "_anchor": "menu1-d"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            ".mbr-list": {
+              "list-style": "none",
+              "padding": "0",
+              "margin": "0"
+            },
+            ".copyright-section, .social-section": {
+              "display": "flex",
+              "flex-direction": "column",
+              "justify-content": "flex-end"
+            },
+            ".line": {
+              "margin": "10px 0",
+              "width": "100%"
+            },
+            ".logo-section": {
+              "img": {
+                "margin": "0 auto"
+              }
+            },
+            ".social-media": {
+              "ul": {
+                "padding": "0",
+                "margin-bottom": "0",
+                "li": {
+                  "display": "inline-block",
+                  "margin-left": "50px"
+                }
+              }
+            },
+            ".mobirise-rights": {
+              "letter-spacing": ".4px"
+            },
+            "@media (max-width: 992px)": {
+              ".social-media ul li": {
+                "margin-left": "30px"
+              },
+              ".container-fluid": {
+                "padding": "0 2rem"
+              },
+              ".menu-container": {
+                "margin-bottom": "20px"
+              },
+              ".mbr-list": {
+                "margin-bottom": "20px",
+                "text-align": "center",
+                "li": {
+                  "margin-bottom": ".5rem"
+                }
+              }
+            },
+            "@media (max-width: 767px)": {
+              ".copyright-section": {
+                "order": "1",
+                "hr": {
+                  "display": "none"
+                }
+              },
+              ".social-media": {
+                "margin-top": "30px",
+                "li:first-child": {
+                  "margin-left": "0"
+                }
+              },
+              ".line": {
+                "margin": "25px 0"
+              },
+              ".mobirise-rights, .social-media": {
+                "align-items": "center",
+                "text-align": "center"
+              }
+            },
+            ".mbr-text, .copyright-section": {
+              "color": "#4a718d"
+            }
+          },
+          "_name": "footer1",
+          "_sourceTheme": "spiritm4",
+          "_customHTML": "<section class=\"footer1\" group=\"Footers\" global once=\"footers\" always-bottom mbr-class=\"{'mbr-reveal': reveal, 'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"5\">\n        <input type=\"checkbox\" title=\"Reveal effect\" name=\"reveal\" checked>\n        <input type=\"checkbox\" title=\"Show Icons\" name=\"showIcons\" checked>\n        <input type=\"range\" inline title=\"Icons Count\" name=\"iconsCount\" min=\"1\" max=\"5\" step=\"1\" value=\"4\" condition=\"showIcons\">\n        <input type=\"range\" inline title=\"Logo Size\" name=\"imgWidth\" min=\"10\" max=\"100\" step=\"1\" value=\"100\">\n        <select title=\"Column Count\" name=\"showCard\">\n            <option value=\"1\">1</option>\n            <option value=\"2\" selected>2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\">4</option>\n        </select>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/022.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#e9ddd8\" selected>\n        </fieldset>\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#f2f1eb\" condition=\"overlay&&bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay&&bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay&&bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container\">\n        <div class=\"footer-container\">\n                <div class=\"row align-left menu-container\">\n            \n            <div class=\"col-lg-3 col-6\" mbr-if=\"showCard > 0\">\n                <ul mbr-text class=\"mbr-fonts-style mbr-list align-left\" mbr-theme-style=\"display-4\" data-app-selector=\".mbr-list\" data-multiline mbr-article>   \n                  <li><br></li> \n              </ul>\n             </div>    \n            <div class=\"col-lg-3 col-6\" mbr-if=\"showCard > 1\">\n                <ul mbr-text class=\"mbr-fonts-style mbr-list align-left\" mbr-theme-style=\"display-4\" data-app-selector=\".mbr-list\" data-multiline mbr-article>\n                  <li><br></li>\n                </ul>\n            </div>\n            <div class=\"col-lg-3 col-6\" mbr-if=\"showCard > 2\">\n                <ul mbr-text class=\"mbr-fonts-style mbr-list align-left\" mbr-theme-style=\"display-4\" data-app-selector=\".mbr-list\" data-multiline mbr-article>\n                  <li>\n                    <a class=\"mbr-fonts-style\" href=\"#\">About</a>\n                  </li>\n                  <li>\n                    <a class=\"mbr-fonts-style\" href=\"#\">Home</a>\n                  </li>\n                  <li>\n                    <a class=\"mbr-fonts-style\" href=\"#\">Blog</a>\n                  </li>\n                 </ul>\n            </div>\n            <div class=\"col-lg-3 col-6\" mbr-if=\"showCard > 3\">\n                <ul mbr-text class=\"mbr-fonts-style mbr-list align-left\" mbr-theme-style=\"display-4\" data-app-selector=\".mbr-list\" data-multiline mbr-article>\n                  <li>\n                    <a class=\"mbr-fonts-style\" href=\"#\">About</a>\n                  </li>\n                  <li>\n                    <a class=\"mbr-fonts-style\" href=\"#\">Home</a>\n                  </li>\n                  <li>\n                    <a class=\"mbr-fonts-style\" href=\"#\">Blog</a>\n                  </li>\n                </ul>\n            </div>\n  \n        </div>\n        \n                <div class=\"row align-center\">\n                    <div class=\"col-12 col-md-5 copyright-section align-left\">   \n                        <hr class=\"line\">\n                        <p class=\"mbr-fonts-style mbr-text mobirise-rights mbr-semibold\" mbr-theme-style=\"display-4\" data-app-selector=\".mbr-text, .copyright-section\"> All rights reserved\n                      </p>\n                    </div>\n                    \n                    <div class=\"col-md-2 offset-md-0 col-6 offset-3 logo-section align-center\">\n                          <a href=\"#\">\n                            <img src=\"@PROJECT_PATH@/assets/images/index-meta-121x41.png\" alt=\"Mobirise\" mbr-style=\"{'width':imgWidth + '%'}\">\n                          </a>\n                    </div>\n                    \n                    <div class=\"col-12 col-md-5 social-section align-right\"> \n                        <div class=\"social-media\" mbr-if=\"showIcons\">\n                             <ul>\n                   <li mbr-if=\"iconsCount > 0\">\n                       <a class=\"icon-transition\" href=\"https://www.facebook.com/brassbandnorthernva\">\n                           <span mbr-icon class=\"mbr-iconfont socicon-facebook socicon\"></span>\n                       </a>\n                   </li>\n                   <li mbr-if=\"iconsCount > 1\">\n                       <a class=\"icon-transition\" href=\"mailto:brassbandofnorthernvirginia@gmail.com\">\n                           <span mbr-icon class=\"mbr-iconfont mobi-mbri-letter mobi-mbri\"></span>\n                       </a>\n                   </li>\n                   <li mbr-if=\"iconsCount > 2\">\n                       <a class=\"icon-transition\" href=\"tel:703 862 6157\">\n                           <span mbr-icon class=\"mbr-iconfont mobi-mbri-phone mobi-mbri\"></span>\n                       </a>\n                   </li>\n                   <li mbr-if=\"iconsCount > 3\">\n                       <a class=\"icon-transition\" href=\"https://www.youtube.com/channel/UCSnXYLA-IODG3gp6eOZlEzQ\" target=\"_blank\">\n                           <span mbr-icon class=\"mbr-iconfont socicon-youtube socicon\"></span>\n                       </a>\n                   </li>\n                   <li mbr-if=\"iconsCount > 4\">\n                       <a class=\"icon-transition\" href=\"#\">\n                           <span mbr-icon class=\"mbr-iconfont socicon-rss socicon\"></span>\n                       </a>\n                   </li>\n                 </ul>\n                        </div>\n                        <hr class=\"line\">\n                        <p class=\"mbr-fonts-style mbr-text mobirise-rights mbr-semibold\" mbr-theme-style=\"display-4\" data-app-selector=\".mbr-text, .copyright-section\">2021 Brass Band of Northern Virginia</p>\n                </div>\n                    \n\n                 </div>\n           </div>\n    </div>\n</section>",
+          "_cid": "sIF4HIAajt",
+          "_protectedParams": [],
+          "_global": true,
+          "_once": "footers",
+          "_params": {},
+          "_anchor": "footer1-e"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value",
+              ".mbr-overlay when (@twoBgColor)": {
+                "padding": "0",
+                "background": "@twoColor",
+                "opacity": "1",
+                "transform": "scale(3) skewX(25deg)",
+                "transform-origin": "left bottom",
+                "left": "-100%"
+              }
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)",
+              ".mbr-overlay": {
+                "background": "@overlayColor",
+                "opacity": "@overlayOpacity"
+              }
+            },
+            ".mbr-section-subtitle": {
+              "letter-spacing": "3.27px !important",
+              "color": "#6a3649",
+              "text-align": "center"
+            },
+            ".title-text": {
+              "color": "#231f59",
+              "text-align": "center"
+            },
+            "H5": {
+              "color": "#4c4a4b",
+              "text-align": "center"
+            },
+            ".section-text, .mbr-section-btn": {
+              "text-align": "left",
+              "color": "#4c4a4b"
+            }
+          },
+          "_name": "content1",
+          "_sourceTheme": "spiritm4",
+          "_customHTML": "<section class=\"content1\" group=\"Content\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" plugins=\"mobirise-icons2\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"7\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"7\">\n        <input type=\"range\" name=\"textWidth\" title=\"Width\" min=\"5\" max=\"12\" value=\"6\" step=\"1\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n         <input type=\"checkbox\" title=\"Subtitle\" name=\"Subtitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Button\" name=\"showButton\">\n         <header>Background</header>\n         <fieldset type=\"background\" name=\"bg\" parallax>\n                <input type=\"image\" title=\"Background Image\" value=\"../_images/022.jpg\" parallax>\n                <input type=\"color\" title=\"Background Color\" value=\"#f2f1eb\" selected>\n         </fieldset>\n            <input type=\"checkbox\" title=\"2 Background Color\" name=\"twoBgColor\" condition=\"bg.type == 'color'\" checked> \n            <input type=\"range\" inline title=\"Width 2 Bg\" name=\"width2Bg\" min=\"1\" max=\"6\" step=\"1\" value=\"3\" condition=\"twoBgColor && bg.type == 'color'\">   \n            <input type=\"color\" title=\"2 Color\" name=\"twoColor\" value=\"#e9ddd8\" condition=\"twoBgColor && bg.type == 'color'\">  \n            <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n            <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#f2f1eb\" condition=\"overlay && bg.type !== 'color'\">\n            <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n <div class=\"mbr-overlay\" mbr-if=\"(overlay && bg.type !== 'color') || (twoBgColor && bg.type == 'color')\" mbr-class=\"{'col-md-4': width2Bg == 1 && twoBgColor && bg.type == 'color',\n                     'col-md-5': width2Bg == 2 && twoBgColor && bg.type == 'color',\n                     'col-md-6': width2Bg == 3 && twoBgColor && bg.type == 'color',\n                     'col-md-7': width2Bg == 4 && twoBgColor && bg.type == 'color',\n                     'col-md-8': width2Bg == 5 && twoBgColor && bg.type == 'color',\n                     'col-md-9': width2Bg == 6 && twoBgColor && bg.type == 'color'}\">\n    </div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-md-{{textWidth}}\">\n                     <h5 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-4 mt-4\" mbr-theme-style=\"display-4\" mbr-if=\"Subtitle\" data-app-selector=\".mbr-section-subtitle\">April 24th 4:00pm<br>Church of the Good Shepperd Burke, VA</h5>\n                     <h4 class=\"mbr-fonts-style title-text align-center mbr-regular mb-4\" mbr-theme-style=\"display-5\" data-app-selector=\".title-text\" mbr-if=\"showTitle\"> Earthrise</h4>\n                     <h5 class=\"mbr-fonts-style align-center section-text mb-4 mbr-regular\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".section-text, .mbr-section-btn\"><b>Festive Setting: Lead On! </b><br>Ronald Holz (b.1949)\n<div>\n</div><div>DR. RONALD HOLZ holds the rank of professor of music literature and instrumental music at Asbury College in Wilmore, Kentucky, where he is the conductor of the college orchestra, instructor of trumpet, and coordinator and coach of the Instrumental Chamber Ensembles of the Collegium Musicum.  A noted music historian in the field of instrumental music, Professor Holz is considered one of the world’s leading authorities on the literature, culture, and history of the British-style brass band, having written extensively about the British brass band and its music. As well, he has served two terms as president of the North American Brass Band Association. Dr. Holz is the music director of the Lexington Brass band, based in Lexington, KY and also directs the Salvation Army Student Fellowship Brass Band of Asbury College.  His graduate training in historical musicology was completed at the College-Conservatory of Music of the University of Cincinnati, and the University of Connecticut.\n</div><div>FESTIVE SETTING: LEAD ON! was commissioned as a festive prelude to be featured by the New York Staff Band of the Salvation Army during worship services.  During the two harmonizations of the hymn tune, reference is made to the writing styles of Erik Leidzen and Richard E. Holz, two composers closely associated with the New York Staff Band.</div><br><div>  \n</div><div><b>IL Guarney-Gomez\n</b></div><div>Today, Antonio Gomes is best remembered for his fifth opera, Il Guarany. The work was premièred in 1870 and is based on the novel O Guarani by José de Alencar. The libretto was in Italian rather than Gomes's native Portuguese. \n</div><div>The somewhat convoluted plot involves an attack on a Portuguese nobleman’s castle by Aymoré Indians led by adventurers in love with the nobleman’s daughter. The attack may have been provoked by the daughter’s preference for the son of the Guaraní chief, with whom she escapes. While the plot might employ a number of seemingly tired nineteenth-century opera clichés, the score was considered very successful at the time due, in part, to Gomes’s treatment of Brazilian folk melodies. Il Guarany was performed regularly throughout Europe for several years. Giuseppe Verdi, upon hearing the opera in 1872, referred to it as the work of a “truly musical genius.” \n</div><div>Il Guarany is one of the most brilliant and popular overtures Local color is obtained by the use of Amazon Indian melodies. The themes of the overture are largely drawn from the opera itself and each has its place in the action. \n</div><div>The majestic opening subject accompanies the invocation to the sun god by a wild tribe of Indians called the Aimores. The melody, played in octaves by flugel horn and euphonium, is the one associated with the scene between the hero and heroine in the camp of the Aimores. The broad, expressive melody following later provides the orchestral background for the plotting of Gonzales and his henchmen. There are many other interesting passages, including a beautiful melody sung by the principal characters as a love-duet in the opera. The overture closes with a shortened version of the invocation to the sun god. \n</div><div>This is a new arrangement of the opening overture for Brass Band by John Srutowski.\n</div><div><br></div><br><div><b>GAELFORCE – PETER GRAHAM\n</b></div><div>Commissioned by Fodens, this work follows in Cry of the Celts style &amp; features 3 traditional Irish tunes. \n</div><div>1. The Minstrel Boy\n</div><div>2. Tossing the Feathers\n</div><div>3. The Rocky Road to Dublin\n</div><div>Peter Graham was born in Scotland in 1958. He is most known for his works for brass and wind bands. He studied under the tutelage of Edward Gregson, where he completed a PhD in composition from Goldsmiths College, London. \n</div><div>Many of Graham’s works are now staples in brass band concert repertoire with notable works including Brilliante, On the Shoulders of Giants, Summon the Dragon and Shine as the Light. Many of these works have also been arranged for wind orchestra and other similar ensembles.\n</div><div>Graham was Music Associate with Black Dyke Band between 1997-2004, and has also held the post as composer-in-residence with Her Majesty’s Coldstream Guards Band. His works are often rich in melodic and harmonic content, as well as being challenging for bands and accessible for audiences. \n</div><div>Gaelforce was composed in 2001 as part of a commission by Fodens Band. Set into three movements that seamlessly transition into one another, each of the movements are based on three traditional Irish tunes. Graham follows in the Cry of the Celts style and has remained one of Graham’s most popular works for both brass band and wind band.</div><br><div> \n</div><div><i>The Music\n</i></div><div>Movement I – The Minstrel Boy\n</div><div>Opening with a full band flourish, the Celtic drum rhythm leads the solo cornets into the main theme for this movement. The catchy melodies are replicated across the band, with the euphoniums offering a colorful counter-melody. The steady tempo of this movement adds to the clarity and emphasizes the importance of the Irish tune here. Muted flourishes from other cornets come and go, with the lower band succumbing to the main theme about halfway through. A full bad exclamation of the chief theme here is heard again, this time showcasing Graham’s rich textural writing. A drone note then leads into the central movement. \n</div><div>Movement II – Tossing the Feathers\n</div><div>The lyrical central section segues from the previous movement, with the flugelhorn taking over the solo here. Top seats then join in to create a chorale of this theme, which is stunningly lyrical and warm in character. As this theme grows, so does the texture, until a quick muted cornet interlude takes over, which offers a unique sound to the mix. The flugelhorn once again steps forward to reiterate the melody, before the whole band then enter with the theme. This is a very pleasing movement in terms of harmony, texture and orchestration, with each part being integral to the overall effect.\n</div><div>Movement III – The Rocky Road to Dublin\n</div><div>The fast and vivacious finale movement starts off with the euphoniums stating the main theme. The tempo is quick and the quavers practically fly off of the page at this point. The solo cornets then joins, and once again we see Graham building texture by adding instruments to an ever-growing texture. As the percussion enter, the excitement builds and the technical theme begins to flourish. In the second half of this movement the bass end start their countermelody, which takes inspiration from the opening movement. As the final chord is built up, the cornets flourish into the final big chord of the piece.\n</div><div>Final Thoughts\n</div><div>Still a popular concert opener or finisher, Peter Graham’s Gaelforce brings together fiery melodies, lyricism and rich orchestrations all true to the Celtic theme.\n</div><div><br></div><br><div><b>EARTHRISE – NIGEL CLARKE\n</b></div><div>Earthrise is my second work dealing with the subject of space travel; the first was called&nbsp;<span style=\"font-size: 1rem; letter-spacing: 0.37px;\">written for wind orchestra. Earthrise is written in one continuous movement but divided in to three sections. I have tried to capture the excitement and expectation that the Apollo 8 mission&nbsp;</span><span style=\"font-size: 1rem; letter-spacing: 0.37px;\">brought to the world. This is reflected in the extreme virtuosic demands put upon the&nbsp;performers. I have </span>endeavored<span style=\"font-size: 1rem; letter-spacing: 0.37px;\">&nbsp;in my opening bars to reflect, as a musical portrait, the&nbsp;description given by the author and aviator Anne Morrow Lindbergh when she witnessed&nbsp;</span><span style=\"font-size: 1rem; letter-spacing: 0.37px;\">the launch on 21 December 1968 in Florida.&nbsp;</span></div><br><div><span style=\"font-size: 1rem; letter-spacing: 0.37px;\"><br></span><span style=\"font-size: 1rem; letter-spacing: 0.37px;\">“Slowly, as in a dream, slowly it seemed to hang suspended on a cloud of fire and smoke.&nbsp;</span><span style=\"font-size: 1rem; letter-spacing: 0.37px;\">Then followed the noise - a shattering roar of explosions, a trip-hammer over one’s head,&nbsp;</span><span style=\"font-size: 1rem; letter-spacing: 0.37px;\">under one’s feet, through one’s body. The Earth shakes, cars rattle, vibrations beat in the&nbsp;</span><span style=\"font-size: 1rem; letter-spacing: 0.37px;\">chest.  A roll of thunder prolonged, prolonged, prolonged.”</span></div><div>After the opening section I have emulated the speed and power of Apollo 8’s Saturn V\n</div><div>rocket, using the Earth's gravitational force to catapult it towards the Moon. Preceding&nbsp;<span style=\"font-size: 1rem; letter-spacing: 0.37px;\">the central section of is a large scale multilayered cadenza featuring most instruments in the band in free time floating bars and portraying the astronauts floating on the dark side of the Moon. The cadenza acts as a prelude to the kernel of the work, the moment when Earth comes into view as the only colored object in our monochrome universe. The final section of the work paints a picture of Apollo 8 hurtling back to Earth at an incredible 25,000 miles per hour on its quarter of a million mile journey, hitting Earth’s narrow atmospheric corridor and finally splashing down in the Pacific. The various moods of are reflected and captured in a specially commissioned&nbsp;</span><span style=\"font-size: 1rem; letter-spacing: 0.37px;\">poem of the same name by Martin Westlake to accompany this score</span></div><div>NIGEL CLARKE began is musical career as a military bandsman but a developing interest in composition took him to the Royal Academy of Music to study with Paul Patterson. Here, his striking originality and capacity for hard work were recognized by several significant awards including the Queen’s Commendation for Excellence – the Royal Academy of Music’s highest distinction. A British Council scholarship enabled him to participate in the 8th Summer School for Young Composers, in Poland, where he studied with Penderecki and Lutoslawski.&nbsp;</div><div>Nigel Clarke has been Tutor at the Royal Academy of Music, London, Head of Composition at the London College of Music, and the Composer to the Royal Military School of Music, Kneller Hall. More recently he has become a visiting tutor at the Royal Northern College of Music, and Associate Composer to the Band of the Grenadier Guards. In 2008 the award of Doctor of Musical Arts was conferred on him by Salford University.</div><br><div> \n</div><div><b>INTERMISSION</b></div><br><div>\n</div><div><b>NATIONAL ANTHEM OF UKRAINE\n</b></div><div>Shche ne vmerla Ukrainas’, the national anthem of Ukraine, has just one verse and one chorus – but it remains one of the world’s mightiest patriotic songs.\n</div><div>It was formally adopted less than three decades ago, following the country’s independence from the Soviet Union in 1991.</div><br><div>\n</div><div>While formally known as the ‘State Anthem of Ukraine’, it also goes by its native title ‘Shche ne vmerla Ukrainy’, which translates into English as ‘Ukraine Has Not Yet Perished’.\n</div><div>The rousing melody we hear today was officially accepted in 1992 by Ukraine’s parliament, the Verkhovna Rada.</div><br><div>\n</div><div>&nbsp;Lyrics in English:\n</div><div>The glory and freedom of Ukraine has not yet perished\n</div><div>Luck will still smile on us brother-Ukrainians.\n</div><div>Our enemies will die, as the dew does in the sunshine,\n</div><div>and we, too, brothers, we'll live happily in our land.\n</div><div>We’ll not spare either our souls or bodies to get freedom\n</div><div>and we’ll prove that we brothers are of Kozak kin.</div><br><b>JOURNEY INTO FREEDOM&nbsp;</b><br><div>\n</div><div>ERIC BALL was one of the twentieth-centuries most prolific composers for the brass band. His fifty-year career saw him achieve great respect as a composer, conductor, and arranger. Born in England in 1903, Ball began his association with brass bands at an early age when he played trombone for the local Salvation Army band. He also worked for the editorial department of the Salvation Army, and through this experience discovered the immense gap in the amount of original music for wind and brass bands. He spent much of his life involved with these ensembles, and wrote a great deal of musical arrangements that have become a regular part of the repertoire for the brass band. \n</div><div>Written for the contest bands at the London championships, Eric Ball’s JOURNEY INTO FREEDOM is a programmatic work depicting the composer’s view of the materialistic age we live in. \n</div><div>Composed to be used as the Championship test piece for band competing at the Royal Albert Hall in 1967, Eric Ball’s Journey Into Freedom is one of his most popular works. The work has endured the test of time, being used twice more for contests, as well as being a Championship band staple. \n</div><div>Journey Into Freedom has strong links to the time it was composed as Ball had very strong ideas to what he wants both the listeners and players to realize:\n</div><div>“Whether they know it or not, today’s competing amateur musicians – and the tens of thousands more they represent – are helping to keep open the ‘Windows of Heaven’ in this harsh materialistic age. Focus on some unexpressed longings of the human heart. In the realms of the spirit, mankind’s greatest victories can be won. May today’s brass band festival give us all hope and inspiration for these troubled times, as well as entertainment and happiness.”\n</div><div>&nbsp;By the time Britain had reached the late 1960s, people had seen the Cold War escalate which in turn affected the traditional values by disaffected youth. Journey Into Freedom was Ball’s way of seeking reaffirmation of his belief that love and spiritual fulfillment through God could still be achieved, even against such a depressing and violent background. It was every person for themselves at this time, with Ball’s music reflecting some of these emotions.\n</div><div><i><br></i></div><br><div><i>The Music\n</i></div><div>Composed in one big movement, Journey Into Freedom is described as a ‘Rhapsody for Brass’. The piece takes around 12 minutes to perform, and is split into six smaller sections that outline the general atmosphere of that section:\n</div><div>I) Moderato &amp; Feroce (Violence and Materialism)\n</div><div>II) Alla Marcia (March of the Protest)\n</div><div>III) Moderator E Molto Feroce (Violence Returns)\n</div><div>IV) Andante con Expressione (Human Love)\n</div><div>V) Allergando Scherzando (Spectacular Waltz)\n</div><div>VI) Andante Cantabile (Love Transformed)\n</div><div>Ball utilises the strength of the band from all angles to create a truly violent opening. The machine-like motif is unyielding and brash in performance. Bitter muted cornets add to the sharpness of this rigid opening. The March of Protest section is slightly lighter in character, with chromatic movement leading the melodi content along. \n</div><div>The march-like tempo and style adds to the idea that this is music of protest and revolt. Ball changes the character throughout this section from light, to a sense of bravado and then a much more intense character which seamlessly leads us into the third section ‘Violence Returns’. The return of the opening rigid motifs are played with double to force from the opening. A countermelody is introduced now, which opposes the original texture through the band. The thicker texture adds to the intensity and drama of this section, with Ball also stepping the dynamics up too.\n</div><div>After another violent outburst the band settle down into the ‘Human Love’ section. Rich lower band lead a solo cornet into a loving duet with the euphonium. The warm accompanying parts leave space for the music to breathe here, unlike in previous sections. Freedom is sought through human love in this section, with the various solo voices representing people. The is a sense of hopefulness through the use of solo voices intertwining and communicating with one another.\n</div><div>The Spectacular Waltz is a moment of light relief from all the destruction and violence. The band play lightly and in a more comedic manner. With trills and other decorations embellishing the melody, the waltz is a welcome change from previous sections. Although lighter in character, there are fluctuations of shadows of what has been and was is to come. A sense of foreboding hangs over this garish waltz.\n</div><div>The final section takes the last two minutes of the piece. ‘Love Theme Transformed’ originated from a hymn tune by Johan Scheffler:</div><br><div>\n</div><div>Oh love that formest me to wear\n</div><div>the image of thy godhead here,\n</div><div>who soughtest me with tender care\n</div><div>through all my wanderings dark and dear –\n</div><div>Oh love, I give myself to thee,\n</div><div>Thine ever, only thine, to be.\n</div><div>The first love theme returns, but this time it is more outspoken and lavish. The warm and rich tones from the lower band in particular add to the emotional edge of this final section. A stark contrast from the opening, the closing passages see Journey Into Freedom end quietly and full of love. Inner freedom has been reached.</div><br><div>\n</div><div>Final Thoughts\n</div><div>Eric Ball’s explosive Journey Into Freedom portrays some of the violent realities of a world that he wanted to triumph using love and inner peace. From the tumultuous opening to the resolved final few bars, Journey Into Freedom might have strong links to the 1960s, but the music can teach us all something, whatever decade it may be.\n</div><div>“Then comes freedom. Then comes freedom.” – Eri\n</div><div>Our Major work of this first half of tonight’s concert is Journey Into Freedom by Eric Ball.  This masterly composition was written to be the 1967 National British Brass Band Championship test piece. Eric Ball is one of the Brass Band World’s most respected composers.  His music has thrilled countless thousands of listeners, and Journey into Freedom will stay in the annals of band music for a very long time.  The Rhapsody is one complete movement divided into six sections and is played without a break in continuity. \n</div><div>In the first section marked moderato and feroce the atmosphere evoked is of unyielding materialism, machine-like, enslaving, and cruel.  The second section, Alla Marcia is music of protest and revolt, but in variable mood: a mixture of high resolve, bravado, and fear.  This is followed by a return of the opening mood but now more rigid and harsh. New elements are introduced into the texture and dynamics are more intense.  The fourth section, Andante con espressione signifies escape.  Freedom is sought through human love, of which various solo voices sing hopefully.  In the allegro scherzando, high spirits and gaiety seem to offer a release for a little while leading to the final Andante Cantabile where the love theme returns, transformed signifying ideal love and contemplation of the Eternal being, a final statement of inner peace and freedom.  In these times of trial in our nation and the world it is with great hope that we present -- Journey into Freedom.</div><br><div>\n</div><div><b>Bring Him Home;\n</b></div><div>In the Musical Les Misérables, the solo Bring Him Home by the lead character, Jean Val jean is a prayer to God, asking for Him to protect the man whom his daughter has fallen in love with. The revolution in Paris is about to start, and many are going to die that day. In the front line, alongside Jean Val jean, Marius Pentamery will fight for the people. Back at her home, Cosette will be praying that her father, and her love, will return safely from the battle. Our Vocal Soloist, Robert Petillo, served 32 years as a first tenor in The U.S. Army Chorus and was a part of many historic events and thousands of performances nationwide. Now retired from the Army, he continues to be in demand, throughout the Washington metroplex. Called “one of the enduring joys of the local early-music scene” by the Washington Post, tenor Robert Petillo is well known in the DC area as a Bach specialist, especially the Evangelist roles in the St. John and St. Matthew Passions, having sung regularly with the Washington Bach Consort since 1980 and having been a soloist with many other local choral societies. \n</div><div>As we contemplate those members of the Ukrainian armed forces that are now willingly putting themselves in harm’s way for the freedom of loved ones, we dedicate this performance to those who stay home, pray and wait for their safe return.  Please welcome tenor soloist Robert Petillo.</div><br><div> \n</div><div><b>PRAYER OF UKRAINE\n</b></div><div>Prayer for Ukraine (Ukrainian: Молитва за Україну, romanized: Molytva za Ukrayinu) is a patriotic Ukrainian hymn published in 1885, which became a spiritual anthem of Ukraine. The text was written by Oleksandr Konysky, and the music was composed by Mykola Lysenko, first with a children's choir in mind. The song became the regular closing hymn in services of the Ukrainian Greek Catholic Church, the Orthodox Church of Ukraine and other churches. It gained national significance when it was performed by mass choirs during the Ukrainian War of Independence in 1917–1920. The hymn was intended to be an official spiritual anthem of Ukraine. It has closed sessions of oblast councils, and has been performed at major national functions. \n</div><div>Prayer for Ukraine was performed in Kyiv in 2001 during a parade celebrating the 10th anniversary of Ukraine's independence. It has been part of church services internationally, in response to the 2022 Russian invasion of Ukraine. On 26 February 2022, the Ukrainian Chorus Dumka of New York performed the hymn in the cold open of Saturday Night Live.</div><br><div> \n</div><div><i>TRANSLATION:\n</i></div><div><i>Lord, oh the Great and Almighty,\n</i></div><div><i>Protect our beloved Ukraine,\n</i></div><div><i>Bless her with freedom and light\n</i></div><div><i>Of your holy rays.\n</i></div><div><i>With learning and knowledge enlighten\n</i></div><div><i>Us, your children small,\n</i></div><div><i>In love pure and everlasting\n</i></div><div><i>Let us, oh Lord, grow.\n</i></div><div><i>We pray, oh Lord Almighty,\n</i></div><div><i>Protect our beloved Ukraine,\n</i></div><div><i>Grant our people and country\n</i></div><div><i>All your kindness and grace.\n</i></div><div><i>Bless us with freedom, bless us with wisdom,\n</i></div><div><i>Guide into kind world,\n</i></div><div><i>Bless us, oh Lord, with good fortune\n</i></div><div><i>For ever and evermore.\n</i></div><div><i>Version # 1 :\n</i></div><div><i>Almighty and Only God,1\n</i></div><div><i>preserve Ukraine for us!\n</i></div><div><i>With beams of freedom and enlightenment\n</i></div><div><i>You shine upon her.\n</i></div><div><i>With the light of science and knowledge\n</i></div><div><i>illumine us, Your children.\n</i></div><div><i>A pure love of our native land\n</i></div><div><i>foster in us, God.\n</i></div><div><i>We pray, our Only God,\n</i></div><div><i>preserve Ukraine for us!\n</i></div><div><i>All Your graces and benevolence\n</i></div><div><i>bestow upon our nation.\n</i></div><div><i>Grant us freedom, grant us luck,\n</i></div><div><i>grant us enlightenment and happiness,\n</i></div><div><i>grant, o God, our people\n</i></div><div><i>many, many years. \n</i></div><div><i>Version # 2 : \n</i></div><div><i>Oh Lord, Almighty and Only\n</i></div><div><i>for us our Ukraine, please, keep\n</i></div><div><i>by freedom’s and the rays of light\n</i></div><div><i>you set her in light.\n</i></div><div><i>By light of science and knowledge\n</i></div><div><i>keep us, your children, enlightened.\n</i></div><div><i>the pure love to the land\n</i></div><div><i>you, oh Lord, please, instill.\n</i></div><div><i>We pray, oh Lord and the Only,\n</i></div><div><i>for us our Ukraine, please, keep.\n</i></div><div><i>all of your presents and generosity,\n</i></div><div><i>you turn to people of ours.\n</i></div><div><i>Give them the freedom, give them good fate,\n</i></div><div><i>give them good light, and the happiness,\n</i></div><div><i>give, oh Lord, people\n</i></div><div><i>many and many years.</i></div><br><div>\n</div><div><b>I’LL WALK WITH GOD&nbsp;</b></div><div>This song was written by American lyricist Paul Francis Webster (1907 – 1984). \n</div><div>It was created for a musical-film, The Student Prince, which was released in 1954.   This origin means it is sometimes considered as an inspirational popular song rather than a hymn, although the lyrics are a very clear statement of faith. It originated as an unnamed tune by Russian composer Nicholas \"Slug\" Brodszky (1905 – 1958). \n</div><div>It also remains popular in many brass band concert programs worldwide, in the arrangement by Goff Richards that we are playing to conclude this concert.</div><br><div>\n</div><div>I'll walk with God \n</div><div>From this day on\n</div><div>His helping hand I'll lean upon\n</div><div>This is my prayer my humble plea\n</div><div>May the lord be ever with me\n</div><div>There is no death though eyes grow dim\n</div><div>There is no fear when I'm near to him\n</div><div>I'll lean on him forever \n</div><div>And he'll forsake me never\n</div><div>He will not fail me as long as my faith is strong\n</div><div>What ever road I may walk alone\n</div><div>I'll walk with God \n</div><div>I'll take his hand\n</div><div>I'll talk with god he'll understand\n</div><div>I'll pray to him\n</div><div>Each day to him\n</div><div>And he'll hear the words that I say\n</div><div>His hand will guide my throne and rod\n</div><div>And I'll never walk alone\n</div><div>While I walk with God\n</div><div>We are sending our hopes and best wishes to the people of Ukraine.\n</div><div><br></div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div> \n</div><div> \n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div> \n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div><div> \n</div><div> \n</div><div> \n</div><div> \n</div><div>\n</div><div>\n</div><div>\n</div><div>\n</div></h5>\n                     <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-center\" data-toolbar=\"-mbrBtnMove\" mbr-if=\"showButton\"><a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">CREATE YOUR OWN WEBSITE</a></div>\n                    </div>\n           </div>\n    </div>\n</section>",
+          "_cid": "t3ShJPJ4tp",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "content1-g"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".content-row": {
+              "background-color": "@cardColor",
+              "padding": "5rem",
+              "@media (max-width: 767px)": {
+                "padding": "1rem"
+              },
+              "& when (@mediaLeft)": {
+                "-webkit-flex-direction": "row-reverse",
+                "flex-direction": "row-reverse",
+                ".mbr-section-btn": {
+                  "text-align": "left"
+                }
+              }
+            },
+            "p": {
+              "margin-bottom": "0rem"
+            },
+            ".btn": {
+              "margin-bottom": "0rem"
+            },
+            ".mbr-section-title": {
+              "margin-bottom": "20px"
+            },
+            ".mbr-section-subtitle": {
+              "opacity": "0.8",
+              "margin-bottom": "15px"
+            },
+            ".mbr-section-btn": {
+              "margin-right": "0rem"
+            },
+            "@media (max-width: 767px)": {
+              ".mbr-section-btn": {
+                "text-align": "left"
+              },
+              ".btn": {
+                "margin-left": "0rem"
+              }
+            },
+            "@media (min-width: 767px) and (max-width: 992px)": {
+              ".mbr-section-btn": {
+                "text-align": "left"
+              },
+              ".btn": {
+                "margin-left": "0rem"
+              }
+            },
+            "@media (max-width: 991px)": {
+              ".mbr-section-btn": {
+                "margin-top": "2rem"
+              }
+            },
+            "@media (min-width: 992px)": {
+              ".btn": {
+                "margin-top": "0rem"
+              }
+            },
+            "H1": {
+              "text-align": "left"
+            },
+            ".mbr-text": {
+              "text-align": "left"
+            }
+          },
+          "_name": "content2",
+          "_sourceTheme": "claimm4",
+          "_customHTML": "<section class=\"content2\" group=\"Content\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"3\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"3\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Show Button\" name=\"showButtons\" checked>\n        <input type=\"checkbox\" title=\"Media On Right/Left\" name=\"mediaLeft\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked> \n        <header>Background</header>\n        <input type=\"color\" title=\"Card Background\" value=\"#d4e7eb\" name=\"cardColor\">\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@ADDONS_PATH@/claimm4/components/_images/bg_3.jpg\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://vimeo.com/171547423\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <div class=\"row content-row align-items-center\">\n            <div class=\"col-md-12\" mbr-class=\"{'col-lg-8' : showButtons, 'col-lg-12' : !showButtons}\">\n                <h1 class=\"mbr-section-title mbr-fonts-style mb-3 mbr-bold\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\">\n                    Donate To the International Committee of the Red Cross to help Ukraine<br></h1>\n                <p class=\"mbr-text mbr-black mbr-regular mbr-light mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\">The BBNV will not take a part of donations, monitor traffic, or take any credit for donations provided to this link.&nbsp; It is to give personal donations to the ICRC that are earmarked for aid to Ukranian refugees, and internally displaced persons. For more information please see the link</p>\n            </div>\n            <div class=\"col-md-12 col-lg-4\" mbr-if=\"showButtons\">\n                <div class=\"mbr-section-btn align-right\" mbr-buttons data-toolbar=\"-mbrBtnMove,-mbrBtnRemove,-mbrBtnAdd\" mbr-theme-style=\"display-4\"><a class=\"btn btn-info btn-md\" href=\"https://www.icrc.org/en/donate/ukraine\" data-app-placeholder=\"Type Text\">Donate to Ukraine</a></div>\n            </div>\n\n        </div>\n    </div>\n</section>",
+          "_cid": "t3Sz1V7uB7",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "content2-k"
         }
       ]
     }
