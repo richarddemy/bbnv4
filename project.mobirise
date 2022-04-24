@@ -47,7 +47,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 21,
+    "uniqCompNum": 22,
     "versionPublish": "5.6.5",
     "screenshot": "screenshot.png",
     "favicon": "@PROJECT_PATH@/assets/images/bbnv-splash-128x128_1.png",
@@ -657,6 +657,91 @@
           "_styles": {
             "padding-top": "(@paddingTop * 1rem)",
             "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".content-row": {
+              "background-color": "@cardColor",
+              "padding": "5rem",
+              "@media (max-width: 767px)": {
+                "padding": "1rem"
+              },
+              "& when (@mediaLeft)": {
+                "-webkit-flex-direction": "row-reverse",
+                "flex-direction": "row-reverse",
+                ".mbr-section-btn": {
+                  "text-align": "left"
+                }
+              }
+            },
+            "p": {
+              "margin-bottom": "0rem"
+            },
+            ".btn": {
+              "margin-bottom": "0rem"
+            },
+            ".mbr-section-title": {
+              "margin-bottom": "20px"
+            },
+            ".mbr-section-subtitle": {
+              "opacity": "0.8",
+              "margin-bottom": "15px"
+            },
+            ".mbr-section-btn": {
+              "margin-right": "0rem"
+            },
+            "@media (max-width: 767px)": {
+              ".mbr-section-btn": {
+                "text-align": "left"
+              },
+              ".btn": {
+                "margin-left": "0rem"
+              }
+            },
+            "@media (min-width: 767px) and (max-width: 992px)": {
+              ".mbr-section-btn": {
+                "text-align": "left"
+              },
+              ".btn": {
+                "margin-left": "0rem"
+              }
+            },
+            "@media (max-width: 991px)": {
+              ".mbr-section-btn": {
+                "margin-top": "2rem"
+              }
+            },
+            "@media (min-width: 992px)": {
+              ".btn": {
+                "margin-top": "0rem"
+              }
+            },
+            "H1": {
+              "text-align": "left"
+            },
+            ".mbr-text": {
+              "text-align": "left"
+            }
+          },
+          "_name": "content2",
+          "_sourceTheme": "claimm4",
+          "_customHTML": "<section class=\"content2\" group=\"Content\" data-bg-video=\"{{bg.type == 'video' &amp;&amp; bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"3\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"3\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Show Button\" name=\"showButtons\" checked=\"\">\n        <input type=\"checkbox\" title=\"Media On Right/Left\" name=\"mediaLeft\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked=\"\"> \n        <header>Background</header>\n        <input type=\"color\" title=\"Card Background\" value=\"#d4e7eb\" name=\"cardColor\">\n        <fieldset type=\"background\" name=\"bg\" parallax=\"\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/bg-3.jpg\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://vimeo.com/171547423\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected=\"\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <div class=\"row content-row align-items-center\">\n            <div class=\"col-md-12\" mbr-class=\"{'col-lg-8' : showButtons, 'col-lg-12' : !showButtons}\">\n                <h1 class=\"mbr-section-title mbr-fonts-style mb-3 mbr-bold\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\">\n                    Donate To the International Committee of the Red Cross to help Ukraine<br></h1>\n                <p class=\"mbr-text mbr-black mbr-regular mbr-light mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\">The BBNV will not take a part of donations, monitor traffic, or take any credit for donations provided to this link.&nbsp; It is to give personal donations to the ICRC that are earmarked for aid to Ukranian refugees, and internally displaced persons. For more information please see the link</p>\n            </div>\n            <div class=\"col-md-12 col-lg-4\" mbr-if=\"showButtons\">\n                <div class=\"mbr-section-btn align-right\" mbr-buttons=\"\" data-toolbar=\"-mbrBtnMove,-mbrBtnRemove,-mbrBtnAdd\" mbr-theme-style=\"display-4\"><a class=\"btn btn-info btn-md\" href=\"https://www.icrc.org/en/donate/ukraine\" data-app-placeholder=\"Type Text\">Donate to Ukraine</a></div>\n            </div>\n\n        </div>\n    </div>\n</section>",
+          "_anchor": "content2-l",
+          "_isUserblock": true,
+          "_cid": "t3SCUXfJKk",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
             "& when (@bg-type = 'color')": {
               "background-color": "@bg-value",
               ".mbr-overlay when (@twoBgColor)": {
@@ -695,7 +780,7 @@
           },
           "_name": "content1",
           "_sourceTheme": "spiritm4",
-          "_customHTML": "<section class=\"content1\" group=\"Content\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" plugins=\"mobirise-icons2\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"7\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"7\">\n        <input type=\"range\" name=\"textWidth\" title=\"Width\" min=\"5\" max=\"12\" value=\"6\" step=\"1\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n         <input type=\"checkbox\" title=\"Subtitle\" name=\"Subtitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Button\" name=\"showButton\" checked>\n         <header>Background</header>\n         <fieldset type=\"background\" name=\"bg\" parallax>\n                <input type=\"image\" title=\"Background Image\" value=\"../_images/022.jpg\" parallax>\n                <input type=\"color\" title=\"Background Color\" value=\"#f2f1eb\" selected>\n         </fieldset>\n            <input type=\"checkbox\" title=\"2 Background Color\" name=\"twoBgColor\" condition=\"bg.type == 'color'\" checked> \n            <input type=\"range\" inline title=\"Width 2 Bg\" name=\"width2Bg\" min=\"1\" max=\"6\" step=\"1\" value=\"3\" condition=\"twoBgColor && bg.type == 'color'\">   \n            <input type=\"color\" title=\"2 Color\" name=\"twoColor\" value=\"#e9ddd8\" condition=\"twoBgColor && bg.type == 'color'\">  \n            <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n            <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#f2f1eb\" condition=\"overlay && bg.type !== 'color'\">\n            <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n <div class=\"mbr-overlay\" mbr-if=\"(overlay && bg.type !== 'color') || (twoBgColor && bg.type == 'color')\" mbr-class=\"{'col-md-4': width2Bg == 1 && twoBgColor && bg.type == 'color',\n                     'col-md-5': width2Bg == 2 && twoBgColor && bg.type == 'color',\n                     'col-md-6': width2Bg == 3 && twoBgColor && bg.type == 'color',\n                     'col-md-7': width2Bg == 4 && twoBgColor && bg.type == 'color',\n                     'col-md-8': width2Bg == 5 && twoBgColor && bg.type == 'color',\n                     'col-md-9': width2Bg == 6 && twoBgColor && bg.type == 'color'}\">\n    </div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-md-{{textWidth}}\">\n                     <h5 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-4 mt-4\" mbr-theme-style=\"display-7\" mbr-if=\"Subtitle\" data-app-selector=\".mbr-section-subtitle\">5:00 pm, Saturday, September 25th\n<div>WWII Memorial, National Mall, Washington DC</div></h5>\n                     <h4 class=\"mbr-fonts-style title-text align-center mbr-regular mb-4\" mbr-theme-style=\"display-1\" data-app-selector=\".title-text\" mbr-if=\"showTitle\"> Unbreakable</h4>\n                     <h5 class=\"mbr-fonts-style align-center section-text mb-4 mbr-regular\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".section-text, .mbr-section-btn\">Join us for a Covid-save concert featuring cutting edge music from modern composers! All of the works on this concert stem from a single theme: that together we are unbreakable.<div><br></div><div>The Brass Band of Northern Virginia is dedicated to giving deep musical experiences and emotionally fulfilling content. Our 30 member ensemble is staffed by professional, freelance, and retired military musicians, all with the shared purpose of providing professional-level, high-quality performances.</div><div><br></div><div>We hope you join us for the first concert of our season! We would love to hear from you, and you can reach us on Facebook, Twitter, Instagram, or Email.<br><br><div><i>Strike Up the Band, George Gershwin arr. Goff Richards\n</i></div><div><i>Jubilee Overture, Philip Sparke\n</i></div><div><i>Adagio for Strings, Samuel Barber arr. Rieks van der Velde\n</i></div><div><i>Resurgam, Eric Ball\n</i></div><div><i>Men of Harlech, Traditional arr. Gordan Langford\n</i></div><div><i>Canterbury Chorale, Jan Van der Roost\n</i></div><div><i>Frenetico, Anthony O'Toole\n</i></div><div><i>You’ll Never Walk Alone, Richard Rogers arr. Howard Snell\n</i></div><div><i>Pastime with Good Company, Stephen Roberts\n</i></div><div><i>Amazing Grace, Traditional arr. William Himes\n</i></div><div><i>March from Pines of Rome, Ottorino Respighi arr. Howard Sne</i>ll</div></div></h5>\n                     <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-center\" data-toolbar=\"-mbrBtnMove\" mbr-if=\"showButton\"><a class=\"btn btn-primary\" href=\"data:application/json,%7B%22type%22%3A%22_donations%22%2C%22item_name%22%3A%22Brass%20Band%20of%20Northern%20Virginia%22%2C%22email%22%3A%22richard%40demymusic.com%22%2C%22price%22%3A%22Donation%22%2C%22oldPrice%22%3A%22%22%2C%22currency_code%22%3A%22USD%22%2C%22description%22%3A%22Donate%20to%20the%20Brass%20Band%20of%20Northern%20Virginia!%22%2C%22images%22%3A%5B%22assets%2Fimages%2Fbbnv%2520splash-1080x1080.png%22%5D%2C%22option1%22%3Anull%2C%22option2%22%3Anull%2C%22option3%22%3Anull%2C%22allPrice%22%3A%22%22%2C%22variants1%22%3Anull%2C%22variants2%22%3Anull%2C%22variants3%22%3Anull%7D\" data-app-placeholder=\"Type Text\" target=\"_blank\">DONATE</a></div>\n                    </div>\n           </div>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"content1\" group=\"Content\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" plugins=\"mobirise-icons2\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"7\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"7\">\n        <input type=\"range\" name=\"textWidth\" title=\"Width\" min=\"5\" max=\"12\" value=\"6\" step=\"1\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n         <input type=\"checkbox\" title=\"Subtitle\" name=\"Subtitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Button\" name=\"showButton\" checked>\n         <header>Background</header>\n         <fieldset type=\"background\" name=\"bg\" parallax>\n                <input type=\"image\" title=\"Background Image\" value=\"../_images/022.jpg\" parallax>\n                <input type=\"color\" title=\"Background Color\" value=\"#f2f1eb\" selected>\n         </fieldset>\n            <input type=\"checkbox\" title=\"2 Background Color\" name=\"twoBgColor\" condition=\"bg.type == 'color'\" checked> \n            <input type=\"range\" inline title=\"Width 2 Bg\" name=\"width2Bg\" min=\"1\" max=\"6\" step=\"1\" value=\"3\" condition=\"twoBgColor && bg.type == 'color'\">   \n            <input type=\"color\" title=\"2 Color\" name=\"twoColor\" value=\"#e9ddd8\" condition=\"twoBgColor && bg.type == 'color'\">  \n            <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n            <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#f2f1eb\" condition=\"overlay && bg.type !== 'color'\">\n            <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n <div class=\"mbr-overlay\" mbr-if=\"(overlay && bg.type !== 'color') || (twoBgColor && bg.type == 'color')\" mbr-class=\"{'col-md-4': width2Bg == 1 && twoBgColor && bg.type == 'color',\n                     'col-md-5': width2Bg == 2 && twoBgColor && bg.type == 'color',\n                     'col-md-6': width2Bg == 3 && twoBgColor && bg.type == 'color',\n                     'col-md-7': width2Bg == 4 && twoBgColor && bg.type == 'color',\n                     'col-md-8': width2Bg == 5 && twoBgColor && bg.type == 'color',\n                     'col-md-9': width2Bg == 6 && twoBgColor && bg.type == 'color'}\">\n    </div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-md-{{textWidth}}\">\n                     <h5 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-4 mt-4\" mbr-theme-style=\"display-7\" mbr-if=\"Subtitle\" data-app-selector=\".mbr-section-subtitle\">5:00 pm, Saturday, September 25th 2022<div>WWII Memorial, National Mall, Washington DC</div></h5>\n                     <h4 class=\"mbr-fonts-style title-text align-center mbr-regular mb-4\" mbr-theme-style=\"display-1\" data-app-selector=\".title-text\" mbr-if=\"showTitle\"> Unbreakable</h4>\n                     <h5 class=\"mbr-fonts-style align-center section-text mb-4 mbr-regular\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".section-text, .mbr-section-btn\">Join us for a Covid-save concert featuring cutting edge music from modern composers! All of the works on this concert stem from a single theme: that together we are unbreakable.<div><br></div><div>The Brass Band of Northern Virginia is dedicated to giving deep musical experiences and emotionally fulfilling content. Our 30 member ensemble is staffed by professional, freelance, and retired military musicians, all with the shared purpose of providing professional-level, high-quality performances.</div><div><br></div><div>We hope you join us for the first concert of our season! We would love to hear from you, and you can reach us on Facebook, Twitter, Instagram, or Email.<br><br><div><i>Strike Up the Band, George Gershwin arr. Goff Richards\n</i></div><div><i>Jubilee Overture, Philip Sparke\n</i></div><div><i>Adagio for Strings, Samuel Barber arr. Rieks van der Velde\n</i></div><div><i>Resurgam, Eric Ball\n</i></div><div><i>Men of Harlech, Traditional arr. Gordan Langford\n</i></div><div><i>Canterbury Chorale, Jan Van der Roost\n</i></div><div><i>Frenetico, Anthony O'Toole\n</i></div><div><i>You’ll Never Walk Alone, Richard Rogers arr. Howard Snell\n</i></div><div><i>Pastime with Good Company, Stephen Roberts\n</i></div><div><i>Amazing Grace, Traditional arr. William Himes\n</i></div><div><i>March from Pines of Rome, Ottorino Respighi arr. Howard Sne</i>ll</div></div></h5>\n                     <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-center\" data-toolbar=\"-mbrBtnMove\" mbr-if=\"showButton\"><a class=\"btn btn-primary\" href=\"data:application/json,%7B%22type%22%3A%22_donations%22%2C%22item_name%22%3A%22Brass%20Band%20of%20Northern%20Virginia%22%2C%22email%22%3A%22richard%40demymusic.com%22%2C%22price%22%3A%22Donation%22%2C%22oldPrice%22%3A%22%22%2C%22currency_code%22%3A%22USD%22%2C%22description%22%3A%22Donate%20to%20the%20Brass%20Band%20of%20Northern%20Virginia!%22%2C%22images%22%3A%5B%22assets%2Fimages%2Fbbnv%2520splash-1080x1080.png%22%5D%2C%22option1%22%3Anull%2C%22option2%22%3Anull%2C%22option3%22%3Anull%2C%22allPrice%22%3A%22%22%2C%22variants1%22%3Anull%2C%22variants2%22%3Anull%2C%22variants3%22%3Anull%7D\" data-app-placeholder=\"Type Text\" target=\"_blank\">DONATE</a></div>\n                    </div>\n           </div>\n    </div>\n</section>",
           "_cid": "sJ8eLoOiie",
           "_anchor": "content1-a",
           "_protectedParams": [],
