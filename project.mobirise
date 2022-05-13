@@ -29,7 +29,8 @@
       },
       "additionalSetColors": [
         "#cef1cd",
-        "#cbffb4"
+        "#cbffb4",
+        "#ffffe4"
       ]
     },
     "path": "@PROJECT_PATH@",
@@ -47,7 +48,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 22,
+    "uniqCompNum": 23,
     "versionPublish": "5.6.5",
     "screenshot": "screenshot.png",
     "favicon": "@PROJECT_PATH@/assets/images/bbnv-splash-128x128_1.png",
@@ -567,6 +568,93 @@
           "_customHTML": "<section class=\"header2\" group=\"Headers\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"9\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"9\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"20\" max=\"100\" step=\"1\" value=\"100\">\n        <header>Show / Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\" checked>\n        <select title=\"Vertical Align\" name=\"verticalAlign\" condition=\"fullScreen\">\n            <option value=\"flex-start\">Top</option>\n            <option value=\"center\" selected>Center</option>\n            <option value=\"flex-end\">Bottom</option>\n        </select>\n        <select title=\"Horizontal Align\" name=\"horizontalAlign\" condition=\"contentWidth < 100\">\n            <option value=\"flex-start\">Left</option>\n            <option value=\"center\" selected>Center</option>\n            <option value=\"flex-end\">Right</option>\n        </select>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/stock-32-1944x1296.jpg\" selected parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#e3d9ca\">\n             <input type=\"video\" value=\"https://www.youtube.com/watch?v=l8UXhtqV6hU\" title=\"Background Video\">\n        </fieldset>\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type!='color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#e3d9ca\" condition=\"bg.type!='color' && overlay\">\n        <input type=\"range\" inline title=\"Overlay Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"bg.type!='color' && overlay\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\"></div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\">\n            <div class=\"content-wrap\">\n                <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\" mbr-if=\"showTitle\">The Brass Band of Northern Virginia</h1>\n                <p class=\"mbr-fonts-style mbr-text mbr-regular\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n                    For fast prototyping and small customers' projects.\n                </p>\n\n                <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn btn-primary\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&item_name=Donate&item_number=Brass%20Band%20of%20Northern%20Virginia&currency_code=USD\" data-app-placeholder=\"Type Text\" target=\"_blank\">DONATE</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "sIF4Dp33Sg",
           "_anchor": "header2-2",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 15px)",
+              "padding-bottom": "(@paddingBottom * 15px)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@showSubtitle) and (@showAnimatedText)": {
+              ".animated-element": {
+                "color": "@wordsColor"
+              },
+              ".typed-cursor": {
+                "opacity": "1",
+                "-webkit-animation": "blink 0.7s infinite",
+                "-moz-animation": "blink 0.7s infinite",
+                "animation": "blink 0.7s infinite",
+                "color": "@wordsColor"
+              },
+              "@keyframes blink": {
+                "0%": {
+                  "opacity": "1"
+                },
+                "50%": {
+                  "opacity": "0"
+                },
+                "100%": {
+                  "opacity": "1"
+                }
+              },
+              "@-webkit-keyframes blink": {
+                "0%": {
+                  "opacity": "1"
+                },
+                "50%": {
+                  "opacity": "0"
+                },
+                "100%": {
+                  "opacity": "1"
+                }
+              },
+              "@-moz-keyframes blink": {
+                "0%": {
+                  "opacity": "1"
+                },
+                "50%": {
+                  "opacity": "0"
+                },
+                "100%": {
+                  "opacity": "1"
+                }
+              }
+            },
+            ".typed-text": {
+              "margin-bottom": "30px",
+              "color": "#ffffe4"
+            },
+            ".mbr-section-text": {
+              "margin-bottom": "1.125rem"
+            },
+            ".mbr-section-text,.mbr-section-btn": {
+              "color": "#ffffe4"
+            },
+            ".typed-text .typed-text": {
+              "color": "#ef8e81"
+            }
+          },
+          "_name": "header1",
+          "_sourceTheme": "spiritm4",
+          "_customHTML": "<section class=\"header1\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" plugins=\"Typed\" mbr-class=\"{'mbr-fullscreen': fullScreen,'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" condition=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline name=\"textWidth\" title=\"Width\" min=\"4\" max=\"12\" value=\"7\" step=\"1\">\n        <select title=\"Align\" name=\"contentAlign\" condition=\"textWidth < 12\">\n            <option value selected>Left</option>\n            <option value=\"justify-content-center\">Center</option>\n            <option value=\"justify-content-end\">Right</option>\n        </select>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Show Animated Text\" name=\"showAnimatedText\" condition=\"showSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" value=\"@PROJECT_PATH@/assets/images/bbnv-header-16-9-website-1-2000x1125.png\" title=\"Background Image\" parallax selected>\n            <input type=\"color\" value=\"#282727\" title=\"Background Color\">\n            <input type=\"video\" value=\"https://www.youtube.com/watch?v=l8UXhtqV6hU\" title=\"Background Video\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#e3d9ca\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay && bg.type !== 'color'\">\n        <header condition=\"showSubtitle && showAnimatedText\">Animated Text Settings</header>\n        <select title=\"Words Title\" name=\"wordsTitle\" condition=\"showSubtitle && showAnimatedText\">\n            <option value=\"title1\" selected>Title 1</option>\n            <option value=\"title2\">Title 2</option>\n            <option value=\"title3\">Title 3</option>\n            <option value=\"text\">Text</option>\n            <option value=\"menu\">Menu</option>\n        </select>\n        <input type=\"color\" title=\"Words Color\" name=\"wordsColor\" value=\"#ffffe4\" condition=\"showSubtitle && showAnimatedText\">\n        <input type=\"range\" inline title=\"Type Speed\" name=\"typeSpeed\" min=\"1\" max=\"100\" value=\"74\" step=\"1\" condition=\"showSubtitle && showAnimatedText\">\n        <input type=\"text\" title=\"Word 1\" inline name=\"animatedWord1\" value=\"Performance\" condition=\"showSubtitle && showAnimatedText\">\n        <input type=\"text\" title=\"Word 2\" inline name=\"animatedWord2\" value=\"Presentation\" condition=\"showSubtitle && showAnimatedText\">\n        <input type=\"text\" title=\"Word 3\" inline name=\"animatedWord3\" value=\"INFORMANCE\" condition=\"showSubtitle && showAnimatedText\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">  \n        <div class=\"row  {{contentAlign}}\">\n            <div class=\"col-md-{{textWidth}}\">\n                <div class=\"typed-text\" mbr-class=\"{'display-1':wordsTitle=='title1','display-2':wordsTitle=='title2',\n                                      'display-5':wordsTitle=='title3','display-7':wordsTitle=='text',\n                                      'display-4':wordsTitle=='menu'}\" mbr-if=\"showSubtitle\">\n                    <span mbr-text class=\"mbr-section-title mbr-fonts-style mbr-light\" mbr-theme-style=\"display-1\" data-app-selector=\".typed-text\">Wine and Brass:The British Brass Band Invasion-<br> A Musical</span>\n                    <span mbr-if=\"showAnimatedText\">\n                      <span class=\"animated-element\" data-word1=\"{{animatedWord1}}\" data-word2=\"{{animatedWord2}}\" data-word3=\"{{animatedWord3}}\" data-speed=\"{{typeSpeed}}\">\n                      </span>\n                    </span>\n                </div>\n                <p class=\"mbr-section-text mbr-fonts-style mbr-regular\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-section-text,.mbr-section-btn\"><b>\n                    Come join us for an evening of classical music, wine, and a deep dive into the lesser-known world of British Brass music.\n                </b></p>\n              <div id=\"eventbrite-widget-container-331631718397\"></div>\n\n[JS_CODE_0]\n\n[JS_CODE_1]\n\n            </div>\n        </div>\n    </div>\n    <div mbr-if=\"showArrow && fullScreen\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
+          "_cid": "t5GvcNTU8h",
+          "_anchor": "header1-m",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [
+            "<script src=\"https://www.eventbrite.com/static/widgets/eb_widgets.js\"></script>",
+            "<script type=\"text/javascript\">\n    var exampleCallback = function() {\n        console.log('Order complete!');\n    };\n\n    window.EBWidgets.createWidget({\n        // Required\n        widgetType: 'checkout',\n        eventId: '331631718397',\n        iframeContainerId: 'eventbrite-widget-container-331631718397',\n\n        // Optional\n        iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided\n        onOrderComplete: exampleCallback  // Method called when an order has successfully completed\n    });\n</script>"
+          ],
           "_protectedParams": [],
           "_global": false,
           "_once": false,

@@ -1262,6 +1262,66 @@ a {
 .cid-sIF4Dp33Sg .mbr-section-btn {
   color: #282727;
 }
+.cid-t5GvcNTU8h {
+  background-image: url("../../../assets/images/bbnv-header-16-9-website-1-2000x1125.png");
+}
+.cid-t5GvcNTU8h .animated-element {
+  color: #ffffe4;
+}
+.cid-t5GvcNTU8h .typed-cursor {
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+  color: #ffffe4;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.cid-t5GvcNTU8h .typed-text {
+  margin-bottom: 30px;
+  color: #ffffe4;
+}
+.cid-t5GvcNTU8h .mbr-section-text {
+  margin-bottom: 1.125rem;
+}
+.cid-t5GvcNTU8h .mbr-section-text,
+.cid-t5GvcNTU8h .mbr-section-btn {
+  color: #ffffe4;
+}
+.cid-t5GvcNTU8h .typed-text .typed-text {
+  color: #ef8e81;
+}
 .cid-t3Shdznvxo {
   padding-top: 5rem;
   padding-bottom: 5rem;
